@@ -1,0 +1,17 @@
+= content_for :title do
+  Tickets
+
+%table.table.table-responsive
+  %thead
+    %th Request Number
+    %th Sequence Number
+    %th Request Type
+    %th Response due date time
+    %th Primary Service Area Code
+    %th Additional Service Area Codes
+    %th Created
+    %th Updated
+    %th
+  %tbody
+    = render partial: 'tickets/ticket', collection: @tickets
+  = paginate @tickets

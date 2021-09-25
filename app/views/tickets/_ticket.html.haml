@@ -1,0 +1,10 @@
+%tr[ticket]
+  %td= link_to ticket.request_number, ticket_path(ticket)
+  %td= ticket.sequence_number
+  %td= ticket.request_type
+  %td= ticket.response_due_date_time
+  %td= ticket.primary_service_area_code
+  %td= ticket.additional_service_area_codes.join(', ')
+  %td= l ticket.created_at, format: :long if ticket.created_at.present?
+  %td= l ticket.updated_at, format: :long if ticket.updated_at.present?
+  %td
