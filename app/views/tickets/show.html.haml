@@ -1,5 +1,51 @@
 = content_for :title do
   = @ticket.request_number
 
-%svg
-  = @ticket.digsite_info_well_known_text
+.container.mt-5
+  .row
+    = link_to 'Back', :back
+  .row.mt-2
+    .col-3
+      Request number
+    .col-6
+      = @ticket.request_number
+  .row
+    .col-3
+      Sequence number
+    .col-6
+      = @ticket.sequence_number
+  .row
+    .col-3
+      Request type
+    .col-6
+      = @ticket.request_type
+  .row
+    .col-3
+      Response due date time
+    .col-6
+      = @ticket.response_due_date_time
+  .row
+    .col-3
+      Primary service area code
+    .col-6
+      = @ticket.primary_service_area_code
+  .row
+    .col-3
+      Additional service area codes
+    .col-6
+      = @ticket.additional_service_area_codes.join(', ')
+  .row
+    .col-3
+      Excavator > Company name
+    .col-6
+      = @ticket.excavator.company_name
+  .row
+    .col-3
+      Excavator > Address
+    .col-6
+      = @ticket.excavator.address
+  .row
+    .col-3
+      Excavator > Crew on site
+    .col-6
+      = @ticket.excavator.crew_on_site
