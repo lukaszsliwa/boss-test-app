@@ -34,18 +34,19 @@
       Additional service area codes
     .col-6
       = @ticket.additional_service_area_codes.join(', ')
-  .row
-    .col-3
-      Excavator > Company name
-    .col-6
-      = @ticket.excavator.company_name
-  .row
-    .col-3
-      Excavator > Address
-    .col-6
-      = @ticket.excavator.address
-  .row
-    .col-3
-      Excavator > Crew on site
-    .col-6
-      = @ticket.excavator.crew_on_site
+  - if (excavator = @ticket.excavator).present?
+    .row
+      .col-3
+        Excavator > Company name
+      .col-6
+        = excavator.company_name
+    .row
+      .col-3
+        Excavator > Address
+      .col-6
+        = excavator.address
+    .row
+      .col-3
+        Excavator > Crew on site
+      .col-6
+        = excavator.crew_on_site
