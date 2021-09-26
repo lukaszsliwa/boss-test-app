@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the signin process", type: :feature do
+describe 'Explore tickets', type: :feature do
   context '/tickets' do
     let!(:ticket1) { create(:ticket) }
     let!(:ticket2) { create(:ticket) }
